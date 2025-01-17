@@ -30,3 +30,12 @@ func (s *Stack) Pop() (int, error) {
 	s.data = s.data[1:]
 	return val, nil
 }
+
+// Swap swaps the first two elements of the stack.
+func (s *Stack) Swap() error {
+	if len(s.data) < 2 {
+		return errors.New("not enough elements to swap")
+	}
+	s.data[0], s.data[1] = s.data[1], s.data[0]
+	return nil
+}
