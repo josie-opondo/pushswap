@@ -39,3 +39,11 @@ func (s *Stack) Swap() error {
 	s.data[0], s.data[1] = s.data[1], s.data[0]
 	return nil
 }
+
+// Rotate shifts all elements up by one position.
+func (s *Stack) Rotate() {
+	if len(s.data) > 1 {
+		first := s.data[0]
+		s.data = append(s.data[1:], first)
+	}
+}
