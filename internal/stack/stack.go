@@ -55,3 +55,8 @@ func (s *Stack) ReverseRotate() {
 		s.data = append([]int{last}, s.data[:len(s.data)-1]...)
 	}
 }
+
+// Print displays the stack.
+func (s *Stack) Print() {
+	fmt.Printf("%s: %v\n", s.name, s.data)
+}
