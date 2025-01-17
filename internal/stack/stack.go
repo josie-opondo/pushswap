@@ -47,3 +47,11 @@ func (s *Stack) Rotate() {
 		s.data = append(s.data[1:], first)
 	}
 }
+
+// ReverseRotate shifts all elements down by one position.
+func (s *Stack) ReverseRotate() {
+	if len(s.data) > 1 {
+		last := s.data[len(s.data)-1]
+		s.data = append([]int{last}, s.data[:len(s.data)-1]...)
+	}
+}
