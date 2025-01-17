@@ -8,12 +8,17 @@ import (
 // Stack represents a stack of integers.
 type Stack struct {
 	data []int
-	name string
 }
 
 // NewStack initializes a new stack.
-func NewStack(name string) *Stack {
-	return &Stack{data: []int{}, name: name}
+func NewStack(nums []int) *Stack {
+	l, r := 0, len(nums)-1
+	for l < r {
+		nums[l], nums[r] = nums[r], nums[l]
+		l++
+		r--
+	}
+	return &Stack{nums}
 }
 
 // Push adds an element to the top of the stack.
